@@ -1,0 +1,30 @@
+﻿<Window x:Class="KinectEsriV2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:k="http://schemas.microsoft.com/kinect/2014"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:esriBehaviors="clr-namespace:ESRI.ArcGIS.Client.Behaviors;assembly=ESRI.ArcGIS.Client.Behaviors"
+        xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+        Name="ControlsBasicsWindow"
+        Title="MainWindow" Height="768" Width="1024" WindowStyle="None" WindowState="Maximized"
+        ResizeMode="NoResize"   WindowStartupLocation="CenterScreen"  UseLayoutRounding="True"
+        FontFamily="Segoe UI" Loaded="ControlsBasicsWindow_Loaded" >
+
+    <k:KinectRegion x:Name="kinectRegion">
+        <Grid Loaded="Grid_Loaded">
+            <esri:Map x:Name="MyMap" Background="LightBlue" Height="Auto" ZoomFactor="1" MaximumResolution="0.24" WrapAround="True" Margin="0,0,0,118" Extent="0,-90,0,90" Width="Auto" ZoomDuration="00:00:2.3" PanDuration="00:00:1">
+                <esri:ArcGISTiledMapServiceLayer Visible="True" x:Name="LayerNight" ID="LayerNight"  Url="https://server.arcgisonline.com/arcgis/rest/services/ESRI_Imagery_World_2D/MapServer/"/>
+                <esri:ArcGISTiledMapServiceLayer Visible="False" x:Name="StreetLayer" ID="StreetLayer" Url="https://server.arcgisonline.com/arcgis/rest/services/ESRI_StreetMap_World_2D/MapServer"/>
+            </esri:Map>
+           
+            <TextBox x:Name ="textBox3" Visibility="Visible" FontSize="55" HorizontalAlignment="Left" Height="108" Margin="766,206,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="252"/>
+            <TextBox x:Name ="textBox1" Visibility="Visible" FontSize="55" HorizontalAlignment="Left" Height="108" Margin="766,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="252"/>
+            <TextBox x:Name ="textBox2" Visibility="Visible" FontSize="55" HorizontalAlignment="Left" Height="98" Margin="766,108,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="252" />
+            <TextBox x:Name ="textBox4" Visibility="Visible" FontSize="55" HorizontalAlignment="Left" Height="143" Margin="766,314,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="252"/>
+
+            <ScrollViewer x:Name="scrollViewer" Margin="0,0,-22,118"></ScrollViewer>
+            <Image x:Name="ColorImage" HorizontalAlignment="Left" Height="166" Margin="-15,636,0,-63" VerticalAlignment="Top" Width="186"/>
+        </Grid>
+    </k:KinectRegion>
+</Window>
